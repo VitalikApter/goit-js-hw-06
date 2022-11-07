@@ -1,6 +1,6 @@
 const formEl = document.querySelector('.login-form');
 
-const handleLoginFormSubmite = e => {
+const handleLoginForm = e => {
   e.preventDefault();
 
   const {
@@ -18,4 +18,4 @@ const handleLoginFormSubmite = e => {
   e.currentTarget.reset();
 };
 
-formEl.addEventListener('submit', handleLoginFormSubmite);
+formEl.addEventListener('submit', handleLoginForm);
