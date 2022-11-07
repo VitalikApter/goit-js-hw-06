@@ -8,7 +8,7 @@ const handleLoginFormSubmite = e => {
   } = e.currentTarget;
 
   if (email.value === '' || password.value === '') {
-    return alert('Please fill in all the fields!');
+    return alert('Усі поля мають бути заповнені!');
   }
 
   console.log({
