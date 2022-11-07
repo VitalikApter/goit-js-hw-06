@@ -1,22 +1,21 @@
-const form = document.querySelector('.login-form');
+const formEl = document.querySelector('.login-form');
 
-form.addEventListener('submit', handleSubmit);
+const handleLoginFormSubmite = e => {
+  e.preventDefault();
 
-function handleSubmit(event) {
-    event.preventDefult();
+  const {
+    elements: { email, password },
+  } = e.currentTarget;
 
-    const targetFormElements = event.currentTarget;
+  if (email.value === '' || password.value === '') {
+    return alert('Please fill in all the fields!');
+  }
 
-    const {
-        email: { value: email },
-        password: {value: password },
-    } = targetFormElements.elements;
+  console.log({
+    email: email.value,
+    password: password.value,
+  });
+  e.currentTarget.reset();
+};
 
-    if (email.length === 0 || password.length === 0) 
-        return alert (" Усі поля повинні бути заповнені!");
-    
-
-    console.log( { email, password });
-
-   targetFormElements.reset();
-}
+formEl.addEventListener('submit', handleLoginFormSubmite);
